@@ -1,5 +1,5 @@
-# Intro to Computation — Media Query Relay: Team 2 <br>
-Team 2:  Coco Li, York Mgbejume, Mandy Sun, Runqi Wang
+# Intro to Computation — Media Query Relay: Team 3 <br>
+Team 3: Victoria Neyman, Tianyu	Zhang, Yiming Wang, Lulu Zhai
 
 ### About Class
 Intro to Computation<br>
