@@ -1,5 +1,5 @@
 # Intro to Computation — Media Query Relay: Team 3 <br>
-Team 3: Victoria Neyman, Tianyu	Zhang, Yiming Wang, Lulu Zhai
+Team 3: Victoria Neyman, Tianyu	Zhang, York Mgbejume, Lulu Zhai
 
 ### About Class
 Intro to Computation<br>
