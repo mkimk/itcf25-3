@@ -29,7 +29,73 @@
 
         @media screen and (min-width: 867px) and (max-width: 1095px) {
             /* Tianyu */
+            body{
+                background-color: rgb(128, 255, 255);
+            }
+
+             #div4.cube {
+        position: absolute;
+        width: 40vw;
+        height: 40vw;
+        top: 50%;
+        left: 50%;
+        transform-style: preserve-3d;
+        transform: translate(-50%, -50%) rotateX(-20deg) rotateY(20deg);
+        animation: cube-rotate 6s infinite linear;
+    }
+
+ /* 悬停时给一点轻微反馈 */
+            #div4:hover {
+                transform: translate(-50%, -50%) scale(1.05);
+                transition: transform 0.2s;
+    }
+
+           .cube .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgb(56, 95, 215);
+        opacity: 0.9;
+        border: 2px solid hotpink;
+    }
+
+    /* 前 */
+    .cube .front {
+        transform: translateZ(20vw);
+    }
+    /* 后 */
+    .cube .back {
+        transform: rotateY(180deg) translateZ(20vw);
+    }
+    /* 左 */
+    .cube .left {
+        transform: rotateY(-90deg) translateZ(20vw);
+    }
+    /* 右 */
+    .cube .right {
+        transform: rotateY(90deg) translateZ(20vw);
+    }
+    /* 上 */
+    .cube .top {
+        transform: rotateX(90deg) translateZ(20vw);
+    }
+    /* 下 */
+    .cube .bottom {
+        transform: rotateX(-90deg) translateZ(20vw);
+    }
+
+    /* 动画：立方体绕 Y 轴不断旋转 */
+    @keyframes cube-rotate {
+        from {
+            transform: translate(-50%,-50%) rotateX(-20deg) rotateY(0deg);
         }
+        to {
+            transform: translate(-50%,-50%) rotateX(-20deg) rotateY(360deg);
+        }
+    }
+            
+
+     }
 
         @media screen and (min-width: 640px) and (max-width: 867px) {
             /* Victoria */
@@ -150,7 +216,16 @@
     <div id="div1"></div>
     <div id="div2"></div>
     <div id="div3"></div>
-    <div id="div4"></div>
+
+    <div id="div4" class="cube">
+    <div class="face front"></div>
+    <div class="face back"></div>
+    <div class="face left"></div>
+    <div class="face right"></div>
+    <div class="face top"></div>
+    <div class="face bottom"></div>
+</div>
+
     <div id="div5"></div>
     <div id="div6"></div>
     <div id="div7"></div>
