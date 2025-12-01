@@ -24,7 +24,50 @@
             body{
             
                 background-color: rgb(0, 0, 0);
-                transition: 2s ease-in;
+                transition: 1s ease-in;
+                
+            }
+            .backback{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0px;
+                
+                background-color: rgb(0, 0, 0);
+                z-index:5;
+                animation: apear 2.5s linear, changecolor 20s infinite;
+        
+            }
+     
+              
+            @keyframes apear {
+                0%{
+                    opacity: 0;
+                }
+                100%{
+                    opacity: 0;
+                }
+            }
+
+            .containnn{
+                position: absolute;
+                top: 50%;                           
+                left: 50%; 
+                
+            }
+            @keyframes vanishs {
+                0%{
+                    opacity: 1;
+                }
+                50%{
+                    opacity: 1;
+                }
+                81%{
+                    opacity: 0;
+                }
+                100%{
+                    opacity: 0;
+                }
             }
 
 
@@ -34,19 +77,38 @@
                 height: 30vw;                       
                 top: 50%;                           
                 left: 50%; 
-                border: 2px solid hotpink;                         
+                border: 2px solid hotpink;
+                opacity: 0;                         
                 transform-style: preserve-3d;      
                 transform: translate(-50%, -50%) rotateX(-10deg) rotateY(30deg);  
 
-                animation: rectangle-rotate 5s linear;  
+                animation: rectangle-rotate 5s linear, vanishs 3s linear;  
                 background: rgb(56, 95, 215);
                 box-shadow: 0 10px 30px rgba(0,0,0,0.5);  
-                transition: ;    
-                border-radius: 8px;                 
+                transition: all 1s ease-in-out;   
+                border-radius: 8px;  
+                z-index: 5;               
             }
             @keyframes rectangle-rotate {
-                0% { transform: translate(-50%, -50%) rotateX(-10deg) rotateY(0deg); }
-                100% { transform: translate(-50%, -50%) rotateX(-10deg) rotateY(360deg); }
+                0% { 
+                transform: translate(-50%, -50%) rotateX(-10deg) rotateY(0deg); 
+                background:rgb(56, 95, 215);
+                z-index: 9;
+
+                }
+                30% { 
+                background: red;
+                
+            }
+           
+              
+                50% { transform: translate(-50%, -50%) rotateX(-10deg) rotateY(180deg); 
+                background: red;
+                z-index: 5;
+            }
+                100% { transform: translate(-50%, -50%) rotateX(-10deg) rotateY(360deg); 
+                background: red;
+            }
             }
                 
            
@@ -101,39 +163,149 @@
             } 
             @keyframes grow {
                 0%{
-                    transform: scale(1);
+                    transform: scaleX(1) scaleY(1);
                 }
                 20%{
-                    transform: scale(1.4);
+                    transform: scaleX(1.4) scaleY(1.4);
                 }
-                30%{
-                    transform: scale(3.6);
+                25%{
+                    transform: scaleX(2) scaleY(2);
                 }
-                45%{
-                    transform: scale(4.7);
+                40%{
+                    transform: scaleX(4.7) scaleY(4.7);
                 }
                 50%{
-                    transform: scale(4.24);
+                    transform: scaleX(4.24) scaleY(4.24);
                 }
                 55%{
-                    transform: scale(4.2);
+                    transform: scaleX(3.7) scaleY(7);
                 }
                 60%{
-                    transform: scale(4.21);
+                    transform: scaleX(3.8) scaleY(2.6);
                 }
-                64%{
-                    transform: scale(4.1);
+                70%{
+                    transform: scaleX(3.5) scaleY(5);
                 }
-                73%{
-                    transform: scale(0);
+                78%{
+                    transform: scaleX(2) scaleY(2);
+                }
+                83%{
+                    transform: scaleX(0) scaleY(0);
                 }
                 100%{
                     transform: scale(0);
                 }
             }
             
+            .horizontal{
+                position:absolute;
+                width: 100%;
+                height: 89px;
+                top:50%;
+                left: 0;
+                z-index: 9;
+                background-color: red;
+                transform: translate(0,-50%);
+                animation: apear 3s linear, hspin 2s infinite, enlarge 20s infinite;
+            }
+              @keyframes hspin{
+            0%{
+                transform:translate(0,-50%) rotateX(0deg);
+            }
+            100%{
+                transform: translate(0,-50%) rotateX(360deg);
+            }
+           }
+            @keyframes apear {
+                0%{
+                    opacity: 0;
+                }
+                50%{
+                    opacity: 0;
+                }
+                51%{
+                    opacity: 1;
+                }
+                100%{
+                    opacity: 1;
+                }
+            }
             
-            
+            .vertical{
+                position:absolute;
+                width: 89px;
+                height: 100%;
+                top:50%;
+                left: 50%;
+                z-index: 9;
+                background-color: red;
+                
+                transform: translate(-50%,-50%);
+                animation: apear 3s linear,
+                vspin 2s infinite,
+                enlarge 20s infinite
+                ;
+
+            }
+           @keyframes vspin{
+            0%{
+                transform:translate(-50%,-50%) rotateY(0deg);
+            }
+            100%{
+                transform: translate(-50%,-50%) rotateY(360deg);
+            }
+           }
+           @keyframes enlarge {
+            0%{
+                filter: blur(0px);
+                
+
+            }
+            20%{
+                filter: blur(2px);
+                        box-shadow: 
+        0 0 0px red,
+        0 0 0px red,
+        0 0 0px red;
+            }
+            40%{
+                filter: blur(4px);
+                box-shadow: 
+        0 0 20px red,
+        0 0 40px red,
+        0 0 60px red;
+            }
+            60%{
+                filter: blur(8px);
+                box-shadow: 
+        0 0 30px red,
+        0 0 60px red,
+        0 0 90px red;
+            }
+            80%{
+                filter: blur(16px);
+                box-shadow: 
+        0 0 40px red,
+        0 0 80px red,
+        0 0 120px red;
+            }
+            100%{
+                filter: blur(4px);
+                box-shadow: 
+        0 0 10px red,
+        0 0 10px red,
+        0 0 10px red;
+                
+            }
+
+           }
+
+
+
+
+
+
+
             
           
                 
@@ -407,8 +579,17 @@
     <div class="ball3"></div>
     <div class="ball4"></div>
     </div>
+    <div class="containnn">
+
     <div class="quotingyork"></div>
-    <div class="quotingyork"></div>
+    </div>
+    
+    
+    <div class="horizontal"></div>
+    <div class="vertical"></div>
+
+    <div class="backback"></div>
+    <div class="vanish"></div>
 
 
 
